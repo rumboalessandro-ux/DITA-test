@@ -21,14 +21,14 @@ jobs:
       - name: Build HTML5 output
         uses: dita-ot/dita-ot-action@4.4
         with:
-          input: src/maps/main.ditamap
+          input: src/main.ditamap
           transtype: html5
           output-path: out/html
 
       - name: Build PDF output
         uses: dita-ot/dita-ot-action@4.4
         with:
-          input: src/maps/main.ditamap
+          input: src/main.ditamap
           transtype: pdf2
           output-path: out/pdf
 
