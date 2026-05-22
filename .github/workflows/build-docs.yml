@@ -8,12 +8,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6.0.2
 
       - name: Build HTML5 output
-        uses: dita-ot/dita-ot-action@master
+        uses: dita-ot/dita-ot-action@4.4
         with:
           dita-ot-version: '4.3.0'
           input: src/maps/main.ditamap
@@ -21,7 +23,7 @@ jobs:
           output-path: out/html
 
       - name: Build PDF output
-        uses: dita-ot/dita-ot-action@master
+        uses: dita-ot/dita-ot-action@4.4
         with:
           dita-ot-version: '4.3.0'
           input: src/maps/main.ditamap
@@ -29,14 +31,14 @@ jobs:
           output-path: out/pdf
 
       - name: Publish HTML to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: out/html
           publish_branch: gh-pages
 
       - name: Upload PDF artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7.0.1
         with:
           name: documentation-pdf
           path: out/pdf
