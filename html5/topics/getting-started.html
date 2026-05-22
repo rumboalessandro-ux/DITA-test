@@ -1,0 +1,17 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2026"><meta name="generator" content="DITA-OT"><title>Getting Started</title><link rel="stylesheet" type="text/css" href="../commonltr.css"></head><body id="getting-started"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Getting Started</h1>
+  <div class="body">
+    <p class="p">To get started, edit the DITA sources under <span class="ph">src/topics</span> and update the map at <span class="ph">src/maps/main.ditamap</span>.</p>
+    <p class="p">Build the documentation locally with the DITA-OT command line using the HTML5 and PDF targets.</p>
+    <section class="section"><h2 class="title sectiontitle">Local build commands</h2>
+      
+      <p class="p">Run these commands from the repository root:</p>
+      <pre class="pre codeblock"><code>
+        dita -i src/maps/main.ditamap -f html5 -o out/html
+        dita -i src/maps/main.ditamap -f pdf2 -o out/pdf
+      </code></pre>
+    </section>
+  </div>
+</article></main></body></html>
