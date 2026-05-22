@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="introduction" xml:lang="en">
+  <title>Introduction</title>
+  <body>
+    <p>This documentation repository demonstrates a minimal DITA 1.3 authoring project with automated CI/CD.</p>
+    <p>The content is structured in reusable DITA topics and compiled into HTML5 and PDF outputs using DITA Open Toolkit.</p>
+    <p>The GitHub Actions workflow builds the documentation on each push to <ph>main</ph> and publishes the generated HTML to GitHub Pages.</p>
+  </body>
+</topic>

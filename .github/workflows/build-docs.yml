@@ -1,0 +1,37 @@
+name: Build DITA Documentation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup DITA-OT
+        uses: dita-ot/dita-ot-action@v1
+        with:
+          dita-ot-version: '4.3.0'
+
+      - name: Build HTML5 output
+        run: dita -i src/maps/main.ditamap -f html5 -o out/html
+
+      - name: Build PDF output
+        run: dita -i src/maps/main.ditamap -f pdf2 -o out/pdf
+
+      - name: Publish HTML to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: out/html
+          publish_branch: gh-pages
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: documentation-pdf
+          path: out/pdf
