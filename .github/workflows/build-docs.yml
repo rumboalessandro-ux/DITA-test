@@ -17,7 +17,6 @@ jobs:
       - name: Build HTML5 output
         uses: dita-ot/dita-ot-action@4.4
         with:
-          dita-ot-version: '4.3.0'
           input: src/maps/main.ditamap
           transtype: html5
           output-path: out/html
@@ -25,7 +24,6 @@ jobs:
       - name: Build PDF output
         uses: dita-ot/dita-ot-action@4.4
         with:
-          dita-ot-version: '4.3.0'
           input: src/maps/main.ditamap
           transtype: pdf2
           output-path: out/pdf
